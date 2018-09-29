@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Link, Route, Redirect, Switch } from 'dva/router';
 import styles from './IndexPage.css';
 import { Row, Col } from 'antd';
-import Slider from "../components/dmenu/tmenu";
+import Sliders from "../components/dmenu/tmenu";
 import CustomBreadcrumb from '../components/breadcrumb';
 
 import Head from "../components/head/head";
@@ -48,10 +48,10 @@ class TM extends Component {
     return (
       <Row style={{ width: '100%', margin: '0' }}>
         <Col span={22} >
-          <CustomBreadcrumb data={this.props.common.breadcrumb} />
+          {/* <CustomBreadcrumb data={this.props.common.breadcrumb} /> */}
           <Head  changeCurrentKey={(key) => {this.changeMenuKeys(key)}}/>
         </Col>
-        <Col span={5} style={{ marginTop: '30px' }} ><Slider   changeProps={(key) => {this.changeMenuKeys(key)}}  currentKey={this.state.currentKey} /></Col>
+        <Col span={5} style={{ marginTop: '30px' }} ><Sliders   changeProps={(key) => {this.changeMenuKeys(key)}}  currentKey={this.state.currentKey} /></Col>
         <Col span={17} style={{ marginTop: '30px' }}>
           <Switch>
             {

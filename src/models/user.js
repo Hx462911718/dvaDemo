@@ -13,6 +13,7 @@ export default {
     loading:false,
     pagination:{
       current : 1,
+      pageSize:5,
       total: null,
     },
     /*modal state*/
@@ -27,7 +28,7 @@ export default {
             dispatch({
               type: 'query',
               payload : {
-                pageSize: 10,
+                pageSize: 5,
                 currentPage: 0
               }
             })
@@ -64,7 +65,7 @@ export default {
       if (data) {
         console.log(`查询前`);
         console.log(data);
-        const dataList = yield call(getReportingEvent, {currentPage: 1, pageSize: 10});
+        const dataList = yield call(getReportingEvent, {currentPage: 1, pageSize: 5});
         console.log(`查询后 ${dataList}`);
         yield put({
           type: 'querySuccess',
@@ -95,7 +96,7 @@ export default {
       delete payload.pageSize
       const  data = yield call(addEvent, payload);
       if (data) {
-        const dataList = yield call(getReportingEvent, {currentPage: 1,pageSize: 10})
+        const dataList = yield call(getReportingEvent, {currentPage: 1,pageSize: 5})
         yield put({
           type: 'querySuccess',
           //list为table的state 如果改变列表会自动刷新

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon,Layout } from 'antd';
 import { Link } from 'dva/router';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
+const {Sider } = Layout;
 
-class Sider extends React.Component {
+class Siders extends React.Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +24,7 @@ class Sider extends React.Component {
     console.log("currennt");
     console.log(this.props.currentKey);
     return (
-      
+      <Sider>
       <Menu
         onClick={(e) =>{this.handleClick(e)}}
         style={{ width: 240 }}
@@ -64,8 +65,9 @@ class Sider extends React.Component {
           </Link>
         </Menu.Item>
       </Menu>
+      </Sider>
     );
   }
 }
 
-export default Sider;
+export default Siders;

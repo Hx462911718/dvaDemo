@@ -21,6 +21,8 @@ class Head extends React.Component {
 
         return (
             // onclick="clickFlowNode('draft')"
+            <div>
+            <h3>事件编号：<span>2018092914140023</span></h3>
             <div className={styles.procedure}>
                 <h4>流转环节：</h4>
                 <ul className={styles.ul} >
@@ -42,6 +44,7 @@ class Head extends React.Component {
                         <p className={styles.t3}>草稿</p>
                     </li>
                 </ul>
+            </div>
             </div>
 
         );

@@ -105,6 +105,10 @@ import UserModal from './create';
             //         }
             //     });
             // };
+            onSelectChange = (selectedRowKeys) => {
+                console.log('selectedRowKeys changed: ', selectedRowKeys);
+                this.setState({ selectedRowKeys });
+              }
 
             render(){
                 const {onClickCheck, onDeleteItem, onEditItem} = this.props;
@@ -156,6 +160,11 @@ import UserModal from './create';
                 ];
                 // console.log(this.props.dataSource.data);
                 const { selectedRowKeys} = this.state;
+                const rowSelection = {
+                    selectedRowKeys,
+                    onChange: this.onSelectChange,
+                  };
+              
                 return (
                     <div>
                         {/* <UserModal record={ {} } ok={ this.createUser }>
@@ -166,7 +175,7 @@ import UserModal from './create';
                             columns={ columns }
                             dataSource={ this.props.dataSource}
                             rowKey={ record=>record.id }
-                            // rowSelection={rowSelection}
+                            rowSelection={rowSelection}
                             pagination={ this.props.pagination }>
                             {/* users datatable */}
                         </Table>
