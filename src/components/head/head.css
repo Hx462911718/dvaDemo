@@ -1,4 +1,4 @@
-.procedure {
+/* .procedure {
     background: #fff;
     margin-left: 5px;
     border: 1px solid #accdff;
@@ -46,7 +46,74 @@
     position: absolute;
     top: -6px;
     left:46px;
-    /* background: url(http://14.215.115.87:4007/csfw_web/skins/skins2/images/procedure_yuan3.png); */
+    background: url(http://14.215.115.87:4007/csfw_web/skins/skins2/images/procedure_yuan3.png);
+} */
+.header{
+    width: 100%;
+    height:130px;
+    background: #FFF;
+}
+.eventNo{
+    /* border: 1px solid #accdff; */
+    height:30px;
+    font-size: 14px;
+    margin: 5px 15px 0 15px;
+}
+.header_content{
+    border: 1px solid #accdff;
+    height:80px;
+    margin: 24px 15px;
+}
+.huanjie{
+    font-size: 14px;
+    color:#0099cc;
+    line-height: 80px;
+    margin-left: 10px;
+    float: left;
+}
+.header_content ul{
+    list-style: none;
+    float: left;
+    padding-left: 10px;
+}
+
+.header_content ul li{
+    float: left;
+    width: 130px;
+    height: 40px;
+}
+
+.item .itemDiv{
+    width: 130px;
+    height: 40px;
+    margin-top: 20px;
+    border: 1px solid #FFF;
+    position: relative;
+}
+
+.line{
+    margin: 17px auto;
+    width: 126px;
+    height: 5px;
+    background: #CCC;
+}
+.point{
+    width: 15px;
+    height: 15px;
+    background: #33CC00;
+    position: absolute;
+    top: 12px;
+    left: 44%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.text{
+    width: 130px;
+    font-size: 12px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    text-align: center;
 }
 
 

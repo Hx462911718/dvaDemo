@@ -84,8 +84,8 @@ function RouterConfig({ history ,app}) {
     <Router history={history}>
       <Switch>
         {/* <Route path="/user" render={props => <UserLayout {...props} {...passProps} />} /> */}
-        <Route path="/detail" render={props => <BasicLayout {...props} {...passProps}/>} />
-        <Redirect exact from="/detail" to="/detail/test1" />
+        <Route path="/detail"  render={props => <BasicLayout {...props} {...passProps}/>} />
+        <Redirect   to="/detail" />
       </Switch>
     </Router>
   </LocaleProvider>

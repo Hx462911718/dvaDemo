@@ -2,11 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'dva';
 import { Link, Route, Redirect, Switch } from 'dva/router';
 import styles from './IndexPage.css';
-import { Row, Col } from 'antd';
+import { Row, Col, Layout } from 'antd';
 import Sliders from "../components/dmenu/tmenu";
 import CustomBreadcrumb from '../components/breadcrumb';
 
 import Head from "../components/head/head";
+import layout from 'antd/lib/layout/layout';
+const { Header, Content, Footer, Sider } = Layout;
 class TM extends Component {
   constructor(props) {
     super(props);
@@ -16,9 +18,9 @@ class TM extends Component {
     }
   }
 
-  changeMenuKeys(key){
+  changeMenuKeys(key) {
     this.setState({
-      currentKey : key
+      currentKey: key
     });
   }
   render() {
@@ -44,32 +46,38 @@ class TM extends Component {
 
     //   )
     // }
-   
+
     return (
-      <Row style={{ width: '100%', margin: '0' }}>
-        <Col span={22} >
-          {/* <CustomBreadcrumb data={this.props.common.breadcrumb} /> */}
-          <Head  changeCurrentKey={(key) => {this.changeMenuKeys(key)}}/>
-        </Col>
-        <Col span={5} style={{ marginTop: '30px' }} ><Sliders   changeProps={(key) => {this.changeMenuKeys(key)}}  currentKey={this.state.currentKey} /></Col>
-        <Col span={17} style={{ marginTop: '30px' }}>
-          <Switch>
-            {
-              getRouteData('BasicLayout').map(item =>
-                (
-                  <Route
-                    exact={item.exact}
-                    key={item.path}
-                    path={'/detail' + item.path}
-                    component={item.component}
-                  />
-                )
-              )
-            }
-            <Redirect exact from="/detail" to="/detail/test1" />
-          </Switch>
-        </Col>
-      </Row>
+
+      <Layout>
+        <Header style={{ background: '#fff', height: '150px', padding :'0'}}>
+          <Head style={{marginTop:"-3.1px"}} changeCurrentKey={(key) => { this.changeMenuKeys(key) }} />
+        </Header>
+        <Layout >
+          <Sider style={{ background: '#fff' }}>
+            <Sliders changeProps={(key) => { this.changeMenuKeys(key) }} currentKey={this.state.currentKey} />
+          </Sider>
+          <Layout style={{ padding: '0 24px 24px' }}>
+            <Content style={{ background: '#fff', padding: 24, marginTop: 10, minHeight: 380 }}>
+              <Switch>
+                {
+                  getRouteData('BasicLayout').map(item =>
+                    (
+                      <Route
+                        exact={item.exact}
+                        key={item.path}
+                        path={'/detail' + item.path}
+                        component={item.component}
+                      />
+                    )
+                  )
+                }
+                <Redirect exact from="/detail" to="/detail/test1" />
+              </Switch>
+            </Content>
+          </Layout>
+        </Layout>
+      </Layout>
     )
   }
 }

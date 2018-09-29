@@ -16,17 +16,7 @@ import UserModal from './create';
 //         });
 //     };
 
-//     const pagination = {
-
-//         pageSize: 5,
-//         itemRender : (current, type, originalElement)=>{
-//             if (type === 'prev') {
-//                 return <a>上一页</a>;
-//               } if (type === 'next') {
-//                 return <a>下一页</a>;
-//               }
-//               return originalElement;
-//         }
+  
 
 //     }
 //     const columns=[
@@ -97,6 +87,8 @@ import UserModal from './create';
                 }
                
             };
+
+            
             //  createUser=(user)=>{
             //     this.props.dispatch({
             //         type:'user/create',
@@ -114,7 +106,7 @@ import UserModal from './create';
                 const {onClickCheck, onDeleteItem, onEditItem} = this.props;
                 const pagination = {
 
-                    pageSize: 5,
+                    pageSize: 4,
                     itemRender : (current, type, originalElement)=>{
                         if (type === 'prev') {
                             return <a>上一页</a>;
@@ -166,7 +158,7 @@ import UserModal from './create';
                   };
               
                 return (
-                    <div>
+                    <div style={{height:'300'}}>
                         {/* <UserModal record={ {} } ok={ this.createUser }>
                             <Button type="primary">NEW</Button>
                         </UserModal> */}
@@ -176,7 +168,7 @@ import UserModal from './create';
                             dataSource={ this.props.dataSource}
                             rowKey={ record=>record.id }
                             rowSelection={rowSelection}
-                            pagination={ this.props.pagination }>
+                            pagination={pagination }>
                             {/* users datatable */}
                         </Table>
                     </div>

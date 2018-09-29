@@ -3,7 +3,6 @@ import { Menu, Icon,Layout } from 'antd';
 import { Link } from 'dva/router';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-const {Sider } = Layout;
 
 class Siders extends React.Component {
 
@@ -24,10 +23,9 @@ class Siders extends React.Component {
     console.log("currennt");
     console.log(this.props.currentKey);
     return (
-      <Sider>
       <Menu
         onClick={(e) =>{this.handleClick(e)}}
-        style={{ width: 240 }}
+        style={{ width: 200 }}
         defaultSelectedKeys={['1']}
         selectedKeys={[currents]}
         // defaultOpenKeys={['sub1']}
@@ -65,7 +63,6 @@ class Siders extends React.Component {
           </Link>
         </Menu.Item>
       </Menu>
-      </Sider>
     );
   }
 }
